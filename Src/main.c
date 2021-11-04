@@ -41,8 +41,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_MAX_NUM 3*5 //3组ADC,每组�???多存�???5个�??
-
+#define ADC_MAX_NUM 3*3 //3组ADC,每组�?????多存�?????5个�??
+#define ADC_CHANNEL_CNT 3
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -55,6 +55,10 @@
 /* USER CODE BEGIN PV */
 uint16_t ADC_Values[ADC_MAX_NUM]={0};
 uint16_t adc_value_flg=0;
+uint16_t ADC_eva[ADC_CHANNEL_CNT] = {0};
+float vpp=0,v_max=0,v_min=0;
+float ft=0.0,v_temp1=0.0,v_temp2=0.0,v_temp3=0.0;
+bool fb=0,zb=0,sb=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -62,9 +66,32 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 
 void start_adc(){
+    HAL_TIM_Base_Start_IT(&htim2);
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
     HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
 }
+/**
+void get_ADC_Channel_Val(void)
+{
+    uint8_t i = 0;
+    for(i=0;i<ADC_CHANNEL_CNT;i++)
+    {
+        ADC_eva[i] = 0;
+    }
 
+    for(i=0;i<ADC_CHANNEL_CNT;i++)
+    {
+        ADC_eva[0] +=  ADC_Values[i*3+0];
+        ADC_eva[1] +=  ADC_Values[i*3+1];
+        ADC_eva[2] +=  ADC_Values[i*3+2];
+    }
+
+    for(i=0;i<ADC_CHANNEL_CNT;i++)
+    {
+        ADC_eva[i] /= 5;
+    }
+}
+*/
 /**
 uint16_t get_adc() {
     HAL_ADC_Start(&hadc1);
@@ -81,7 +108,6 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
     //获取值并存储
     ADC_Values[adc_value_flg++]=HAL_ADC_GetValue(hadc);
     HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-    printf("test");
     if(adc_value_flg==ADC_MAX_NUM)
     {
         adc_value_flg=0;//清零下标
@@ -89,6 +115,17 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 
 
 }
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
+    v_temp1=((float )ADC_Values[0]/4096*3.3);
+    v_temp2=((float )ADC_Values[1]/4096*3.3);
+    v_temp3=((float )ADC_Values[2]/4096*3.3);
+    ft=v_temp1;
+    if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
+    //get_ADC_Channel_Val();
+}
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -129,13 +166,10 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);
-  HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
+
   HAL_ADCEx_Calibration_Start(&hadc1);
   RetargetInit(&huart1);
-  int it=0;
-  float ft=0.0;
-  bool ib=0,fb=0;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -143,25 +177,21 @@ int main(void)
   start_adc();
     while (1)
     {
-        if(it == 20 || it == -20){ib= !ib;}//else if(it <= -20 ){ib= 1;}
-        if(ib){it=it+1;}else{it=it-1;}
-        //if(ft == 5 || ft == -5){fb= !fb;}//else if(ft <= -5 ){fb= 1;}
-        //if(fb){ft=ft+0.5;}else{ft=ft-0.5;}
-        uint16_t ADC_1[5]={ADC_Values[0],ADC_Values[1],ADC_Values[2],ADC_Values[3],ADC_Values[4]};
-
-        ft=((float )ADC_Values[0]/4096*3.3);
-        printf("采样值：%.4f\n",ft);
+        printf("采样值：%.4f\t峰峰值：%.3f\n",ft,vpp);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
         unsigned char Tx_pack[150];
         startValuePack(Tx_pack);
-        putBool(ib);
         putBool(fb);
-        putInt(it);
-        putFloat(ft);
+        putBool(zb);
+        putBool(sb);
+        putInt(vpp);
+        //putFloat(ft);
+        putFloat(v_temp1);
+        putFloat(v_temp2);
+        putFloat(v_temp3);
         sendBuffer(Tx_pack,(endValuePack()));
-        printf("ib:%d\tfb:%d\tit:%d\tft:%f\n",ib,fb,it,ft);
         HAL_Delay(20);
     }
   /* USER CODE END 3 */
