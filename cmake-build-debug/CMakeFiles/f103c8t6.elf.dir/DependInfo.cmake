@@ -55,6 +55,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "I:/STM32H7/clion/stm32/f103c8t6/Src/stm32f1xx_it.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/syscalls.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/syscalls.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/system_stm32f1xx.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.obj"
+  "I:/STM32H7/clion/stm32/f103c8t6/Src/tim.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/tim.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/usart.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/usart.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/valuepack.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.obj"
   )

@@ -26,6 +26,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/syscalls.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.obj"
+  "CMakeFiles/f103c8t6.elf.dir/Src/tim.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/usart.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/startup/startup_stm32f103xb.s.obj"

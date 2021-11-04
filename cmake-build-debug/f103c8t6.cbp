@@ -310,6 +310,9 @@
 		<Unit filename="I:/STM32H7/clion/stm32/f103c8t6/Src/system_stm32f1xx.c">
 			<Option target="f103c8t6.elf"/>
 		</Unit>
+		<Unit filename="I:/STM32H7/clion/stm32/f103c8t6/Src/tim.c">
+			<Option target="f103c8t6.elf"/>
+		</Unit>
 		<Unit filename="I:/STM32H7/clion/stm32/f103c8t6/Src/usart.c">
 			<Option target="f103c8t6.elf"/>
 		</Unit>

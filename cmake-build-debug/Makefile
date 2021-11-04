@@ -776,6 +776,30 @@ Src/system_stm32f1xx.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\f103c8t6.elf.dir\build.make CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.s
 .PHONY : Src/system_stm32f1xx.c.s
 
+Src/tim.obj: Src/tim.c.obj
+.PHONY : Src/tim.obj
+
+# target to build an object file
+Src/tim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\f103c8t6.elf.dir\build.make CMakeFiles/f103c8t6.elf.dir/Src/tim.c.obj
+.PHONY : Src/tim.c.obj
+
+Src/tim.i: Src/tim.c.i
+.PHONY : Src/tim.i
+
+# target to preprocess a source file
+Src/tim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\f103c8t6.elf.dir\build.make CMakeFiles/f103c8t6.elf.dir/Src/tim.c.i
+.PHONY : Src/tim.c.i
+
+Src/tim.s: Src/tim.c.s
+.PHONY : Src/tim.s
+
+# target to generate assembly for a file
+Src/tim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\f103c8t6.elf.dir\build.make CMakeFiles/f103c8t6.elf.dir/Src/tim.c.s
+.PHONY : Src/tim.c.s
+
 Src/usart.obj: Src/usart.c.obj
 .PHONY : Src/usart.obj
 
@@ -922,6 +946,9 @@ help:
 	@echo ... Src/system_stm32f1xx.obj
 	@echo ... Src/system_stm32f1xx.i
 	@echo ... Src/system_stm32f1xx.s
+	@echo ... Src/tim.obj
+	@echo ... Src/tim.i
+	@echo ... Src/tim.s
 	@echo ... Src/usart.obj
 	@echo ... Src/usart.i
 	@echo ... Src/usart.s

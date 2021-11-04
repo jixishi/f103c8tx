@@ -22,6 +22,7 @@
 #include "adc.h"
 #include "dma.h"
 #include "i2c.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -40,7 +41,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_MAX_NUM 3*5 //3组ADC,每组�?多存�?5个�??
+#define ADC_MAX_NUM 3*5 //3组ADC,每组�???多存�???5个�??
 
 /* USER CODE END PD */
 
@@ -61,20 +62,15 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 
 void start_adc(){
-    //开启ADC1,使能中断
     HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
 }
 
-//启动函数，需要在main中调用一�?
 /**
 uint16_t get_adc() {
-    //开启ADC1
     HAL_ADC_Start(&hadc1);
-    //等待ADC转换完成，超时为100ms
-    HAL_ADC_PollForConversion(&hadc1, 100);
+    HAL_ADC_PollForConversion(&hadc1, 10);
 
     if (HAL_IS_BIT_SET(HAL_ADC_GetState(&hadc1), HAL_ADC_STATE_REG_EOC)) {
-        //读取值
         return HAL_ADC_GetValue(&hadc1);
     }
     return 0;
@@ -85,6 +81,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
     //获取值并存储
     ADC_Values[adc_value_flg++]=HAL_ADC_GetValue(hadc);
     HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    printf("test");
     if(adc_value_flg==ADC_MAX_NUM)
     {
         adc_value_flg=0;//清零下标
@@ -130,7 +127,10 @@ int main(void)
   MX_USART1_UART_Init();
   MX_DMA_Init();
   MX_ADC1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim2);
+  HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
   HAL_ADCEx_Calibration_Start(&hadc1);
   RetargetInit(&huart1);
   int it=0;
@@ -147,7 +147,8 @@ int main(void)
         if(ib){it=it+1;}else{it=it-1;}
         //if(ft == 5 || ft == -5){fb= !fb;}//else if(ft <= -5 ){fb= 1;}
         //if(fb){ft=ft+0.5;}else{ft=ft-0.5;}
-         ADC1[5]={ADC_Values[0],ADC_Values[1],ADC_Values[2],ADC_Values[3],ADC_Values[4]};
+        uint16_t ADC_1[5]={ADC_Values[0],ADC_Values[1],ADC_Values[2],ADC_Values[3],ADC_Values[4]};
+
         ft=((float )ADC_Values[0]/4096*3.3);
         printf("采样值：%.4f\n",ft);
     /* USER CODE END WHILE */
@@ -161,7 +162,7 @@ int main(void)
         putFloat(ft);
         sendBuffer(Tx_pack,(endValuePack()));
         printf("ib:%d\tfb:%d\tit:%d\tft:%f\n",ib,fb,it,ft);
-        HAL_Delay(2);
+        HAL_Delay(20);
     }
   /* USER CODE END 3 */
 }
