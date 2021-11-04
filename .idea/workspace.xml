@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="f103c8t6" targetName="f103c8t6.elf" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2a690bb0-74ce-4f3b-8de1-ca18b26a453f" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="EmbeddedSvdWindowState">
+    <option name="columnWidths">
+      <list>
+        <option value="212" />
+        <option value="92" />
+        <option value="2146" />
+      </list>
+    </option>
+    <option name="columnOrder">
+      <list>
+        <option value="名称" />
+        <option value="值" />
+        <option value="描述" />
+      </list>
+    </option>
+    <option name="loadedFiles">
+      <list>
+        <option value="d:\STM32Cube\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.productdb.debug_2.0.0.202107021202\resources\cmsis\STMicroelectronics_CMSIS_SVD\STM32F103.svd" />
+      </list>
+    </option>
+    <option name="nodes">
+      <map>
+        <entry key="STM32F103.svd" value="-E" />
+        <entry key="STM32F103.svd|g:ADC" value="-E" />
+        <entry key="STM32F103.svd|g:DMA" value="-E" />
+        <entry key="STM32F103.svd|p:ADC1" value="-E" />
+        <entry key="STM32F103.svd|p:ADC1|CR1" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|CR2" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|DR" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|HTR" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JDR1" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JDR2" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JDR3" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JDR4" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JOFR1" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JOFR2" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JOFR3" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JOFR4" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|JSQR" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|LTR" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|SMPR1" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|SMPR2" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|SQR1" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|SQR2" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|SQR3" value="HC" />
+        <entry key="STM32F103.svd|p:ADC1|SR" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1" value="-E" />
+        <entry key="STM32F103.svd|p:DMA1|CCR1" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CCR2" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CCR3" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CCR4" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CCR5" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CCR6" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CCR7" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CMAR1" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CMAR2" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CMAR3" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CMAR4" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CMAR5" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CMAR6" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CMAR7" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CNDTR1" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CNDTR2" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CNDTR3" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CNDTR4" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CNDTR5" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CNDTR6" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CNDTR7" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CPAR1" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CPAR2" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CPAR3" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CPAR4" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CPAR5" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CPAR6" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|CPAR7" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|IFCR" value="HC" />
+        <entry key="STM32F103.svd|p:DMA1|ISR" value="HC" />
+      </map>
+    </option>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Inc/valuepack.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Src/valuepack.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Src/main.c" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="20Iz0IfIJsW1sXWdTExin9pAQSa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="d:/STM32Cube/STM32CubeIDE_1.7.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.productdb.debug_2.0.0.202107021202/resources/cmsis/STMicroelectronics_CMSIS_SVD/STM32F103.svd" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="OpenOCD 下载并运行.OCD f103c8t6">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="f103c8t6.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="f103c8t6" TARGET_NAME="f103c8t6.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="f103c8t6" RUN_TARGET_NAME="f103c8t6.elf">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OCD f103c8t6" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="f103c8t6" TARGET_NAME="f103c8t6.elf" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="f103c8t6" RUN_TARGET_NAME="f103c8t6.elf">
+      <openocd version="1" gdb-port="3333" telnet-port="4444" board-config="board\JXS\0_dap-stm32f1x.cfg" reset-type="INIT" download-type="UPDATED_ONLY">
+        <debugger kind="GDB" isBundled="true" />
+      </openocd>
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake 应用程序.f103c8t6.elf" />
+      <item itemvalue="OpenOCD 下载并运行.OCD f103c8t6" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="2a690bb0-74ce-4f3b-8de1-ca18b26a453f" name="变更" comment="" />
+      <created>1635746665402</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635746665402</updated>
+      <workItem from="1635746686200" duration="2216000" />
+      <workItem from="1635750304328" duration="531000" />
+      <workItem from="1635751265401" duration="7918000" />
+      <workItem from="1635764978574" duration="11864000" />
+      <workItem from="1635908763514" duration="122000" />
+      <workItem from="1635911428715" duration="1991000" />
+      <workItem from="1635914004951" duration="1457000" />
+      <workItem from="1635915515713" duration="924000" />
+      <workItem from="1635916994938" duration="1238000" />
+      <workItem from="1635937656935" duration="1069000" />
+      <workItem from="1635946306005" duration="593000" />
+      <workItem from="1635992256984" duration="1038000" />
+      <workItem from="1635995097792" duration="20268000" />
+      <workItem from="1636038355507" duration="244000" />
+      <workItem from="1636038608667" duration="3601000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
