@@ -14,7 +14,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a690bb0-74ce-4f3b-8de1-ca18b26a453f" name="变更" comment="" />
+    <list default="true" id="2a690bb0-74ce-4f3b-8de1-ca18b26a453f" name="变更" comment="sf">
+      <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +129,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="d:/STM32Cube/STM32CubeIDE_1.7.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.productdb.debug_2.0.0.202107021202/resources/cmsis/STMicroelectronics_CMSIS_SVD/STM32F103.svd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -185,8 +187,16 @@
       <workItem from="1635992256984" duration="1038000" />
       <workItem from="1635995097792" duration="20268000" />
       <workItem from="1636038355507" duration="244000" />
-      <workItem from="1636038608667" duration="3601000" />
+      <workItem from="1636038608667" duration="4009000" />
     </task>
+    <task id="LOCAL-00001" summary="sf">
+      <created>1636042392917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636042392917</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +213,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sf" />
+    <option name="LAST_COMMIT_MESSAGE" value="sf" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -147,6 +147,7 @@ int main(void)
         if(ib){it=it+1;}else{it=it-1;}
         //if(ft == 5 || ft == -5){fb= !fb;}//else if(ft <= -5 ){fb= 1;}
         //if(fb){ft=ft+0.5;}else{ft=ft-0.5;}
+         ADC1[5]={ADC_Values[0],ADC_Values[1],ADC_Values[2],ADC_Values[3],ADC_Values[4]};
         ft=((float )ADC_Values[0]/4096*3.3);
         printf("采样值：%.4f\n",ft);
     /* USER CODE END WHILE */
