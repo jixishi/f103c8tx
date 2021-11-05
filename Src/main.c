@@ -119,6 +119,12 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
+    OLED_CLS();
+    OLED_ShowString(0,16,"ADC:",16);
+    OLED_ShowFloat(64,16,ft,16);
+    OLED_ShowString(0,32,"Vpp:",16);
+    OLED_ShowFloat(64,32,vpp,16);
+    OLED_Refresh();
     //v_temp1=((float )ADC_Values[0]/4096*3.3);
     //v_temp2=((float )ADC_Values[1]/4096*3.3);
     //v_temp3=((float )ADC_Values[2]/4096*3.3);
@@ -170,7 +176,10 @@ int main(void)
   OLED_CLS();
   HAL_ADCEx_Calibration_Start(&hadc1);
   RetargetInit(&huart1);
-  OLED_Fill(1);
+  OLED_ShowChinese(0+16,0,0,16);
+  OLED_ShowChinese(16+16,0,1,16);
+  OLED_ShowChinese(32+16,0,2,16);
+  OLED_Refresh();
   /* USER CODE END 2 */
 
   /* Infinite loop */

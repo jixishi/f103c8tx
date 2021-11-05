@@ -1,7 +1,7 @@
 #define OLED_ADDRESS 0x78
 #include "stm32f1xx_hal.h"
 #include "stdlib.h"
-#include "oledfont.h"
+#include <stdio.h>
 void OLED_Init(void);//初始化
 void WriteCmd(unsigned char I2C_Command);//写命令
 void WriteDat(unsigned char I2C_Data);//写数据
@@ -32,6 +32,11 @@ void OLED_DrawCircle(uint8_t x,uint8_t y,uint8_t r);
 //y:0~63
 //size:选择字体 12/16/24
 void OLED_ShowChar(uint8_t x,uint8_t y,uint8_t chr,uint8_t size1);
+//显示浮点数
+//x,y:起点坐标
+//size1:字体大小
+//*chr:字符串起始地址
+void OLED_ShowFloat(uint8_t x,uint8_t y,float num,uint8_t size1);
 //显示字符串
 //x,y:起点坐标
 //size1:字体大小

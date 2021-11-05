@@ -14,26 +14,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a690bb0-74ce-4f3b-8de1-ca18b26a453f" name="变更" comment="tim_ff_save">
-      <change afterPath="$PROJECT_DIR$/Inc/oled.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inc/oledfont.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/oled.c" afterDir="false" />
+    <list default="true" id="2a690bb0-74ce-4f3b-8de1-ca18b26a453f" name="变更" comment="oled_init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/oled.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/oled.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/oledfont.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/oledfont.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/oled.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/oled.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.elf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.hex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636080515576</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="oled_init">
+      <created>1636085656000</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636085656000</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +267,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="test_init" />
     <MESSAGE value="tim_ff_save" />
-    <option name="LAST_COMMIT_MESSAGE" value="tim_ff_save" />
+    <MESSAGE value="oled_init" />
+    <option name="LAST_COMMIT_MESSAGE" value="oled_init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
