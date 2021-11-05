@@ -50,6 +50,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "I:/STM32H7/clion/stm32/f103c8t6/Src/gpio.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/gpio.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/i2c.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/i2c.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/main.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/main.c.obj"
+  "I:/STM32H7/clion/stm32/f103c8t6/Src/oled.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/oled.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/retarget.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/stm32f1xx_hal_msp.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.obj"
   "I:/STM32H7/clion/stm32/f103c8t6/Src/stm32f1xx_it.c" "I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj"

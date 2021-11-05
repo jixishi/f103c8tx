@@ -32,6 +32,7 @@
 #include <stdbool.h>
 #include "valuepack.h"
 #include "retarget.h"
+#include "oled.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -164,10 +165,12 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
+  OLED_Init();
+  OLED_ON();
+  OLED_CLS();
   HAL_ADCEx_Calibration_Start(&hadc1);
   RetargetInit(&huart1);
-
+  OLED_Fill(1);
   /* USER CODE END 2 */
 
   /* Infinite loop */

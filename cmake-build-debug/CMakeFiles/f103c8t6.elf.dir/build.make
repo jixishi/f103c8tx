@@ -351,9 +351,22 @@ CMakeFiles/f103c8t6.elf.dir/Src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/f103c8t6.elf.dir/Src/main.c.s"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S I:\STM32H7\clion\stm32\f103c8t6\Src\main.c -o CMakeFiles\f103c8t6.elf.dir\Src\main.c.s
 
+CMakeFiles/f103c8t6.elf.dir/Src/oled.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
+CMakeFiles/f103c8t6.elf.dir/Src/oled.c.obj: ../Src/oled.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/oled.c.obj"
+	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\oled.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\oled.c
+
+CMakeFiles/f103c8t6.elf.dir/Src/oled.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/f103c8t6.elf.dir/Src/oled.c.i"
+	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E I:\STM32H7\clion\stm32\f103c8t6\Src\oled.c > CMakeFiles\f103c8t6.elf.dir\Src\oled.c.i
+
+CMakeFiles/f103c8t6.elf.dir/Src/oled.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/f103c8t6.elf.dir/Src/oled.c.s"
+	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S I:\STM32H7\clion\stm32\f103c8t6\Src\oled.c -o CMakeFiles\f103c8t6.elf.dir\Src\oled.c.s
+
 CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.obj: ../Src/retarget.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\retarget.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\retarget.c
 
 CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.i: cmake_force
@@ -366,7 +379,7 @@ CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.s: cmake_force
 
 CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.obj: ../Src/stm32f1xx_hal_msp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\stm32f1xx_hal_msp.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\stm32f1xx_hal_msp.c
 
 CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.i: cmake_force
@@ -379,7 +392,7 @@ CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.s: cmake_force
 
 CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj: ../Src/stm32f1xx_it.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\stm32f1xx_it.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\stm32f1xx_it.c
 
 CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.i: cmake_force
@@ -392,7 +405,7 @@ CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.s: cmake_force
 
 CMakeFiles/f103c8t6.elf.dir/Src/syscalls.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/Src/syscalls.c.obj: ../Src/syscalls.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/syscalls.c.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\syscalls.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\syscalls.c
 
 CMakeFiles/f103c8t6.elf.dir/Src/syscalls.c.i: cmake_force
@@ -405,7 +418,7 @@ CMakeFiles/f103c8t6.elf.dir/Src/syscalls.c.s: cmake_force
 
 CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.obj: ../Src/system_stm32f1xx.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\system_stm32f1xx.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\system_stm32f1xx.c
 
 CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.i: cmake_force
@@ -418,7 +431,7 @@ CMakeFiles/f103c8t6.elf.dir/Src/system_stm32f1xx.c.s: cmake_force
 
 CMakeFiles/f103c8t6.elf.dir/Src/tim.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/Src/tim.c.obj: ../Src/tim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/tim.c.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\tim.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\tim.c
 
 CMakeFiles/f103c8t6.elf.dir/Src/tim.c.i: cmake_force
@@ -431,7 +444,7 @@ CMakeFiles/f103c8t6.elf.dir/Src/tim.c.s: cmake_force
 
 CMakeFiles/f103c8t6.elf.dir/Src/usart.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/Src/usart.c.obj: ../Src/usart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/usart.c.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\usart.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\usart.c
 
 CMakeFiles/f103c8t6.elf.dir/Src/usart.c.i: cmake_force
@@ -444,7 +457,7 @@ CMakeFiles/f103c8t6.elf.dir/Src/usart.c.s: cmake_force
 
 CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.obj: ../Src/valuepack.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\Src\valuepack.c.obj -c I:\STM32H7\clion\stm32\f103c8t6\Src\valuepack.c
 
 CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.i: cmake_force
@@ -457,7 +470,7 @@ CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.s: cmake_force
 
 CMakeFiles/f103c8t6.elf.dir/startup/startup_stm32f103xb.s.obj: CMakeFiles/f103c8t6.elf.dir/flags.make
 CMakeFiles/f103c8t6.elf.dir/startup/startup_stm32f103xb.s.obj: ../startup/startup_stm32f103xb.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building ASM object CMakeFiles/f103c8t6.elf.dir/startup/startup_stm32f103xb.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building ASM object CMakeFiles/f103c8t6.elf.dir/startup/startup_stm32f103xb.s.obj"
 	"D:\GNU Arm Embedded Toolchain\9 2019.9\bin\arm-none-eabi-gcc.exe" $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\f103c8t6.elf.dir\startup\startup_stm32f103xb.s.obj -c I:\STM32H7\clion\stm32\f103c8t6\startup\startup_stm32f103xb.s
 
 CMakeFiles/f103c8t6.elf.dir/startup/startup_stm32f103xb.s.i: cmake_force
@@ -492,6 +505,7 @@ f103c8t6_elf_OBJECTS = \
 "CMakeFiles/f103c8t6.elf.dir/Src/gpio.c.obj" \
 "CMakeFiles/f103c8t6.elf.dir/Src/i2c.c.obj" \
 "CMakeFiles/f103c8t6.elf.dir/Src/main.c.obj" \
+"CMakeFiles/f103c8t6.elf.dir/Src/oled.c.obj" \
 "CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.obj" \
 "CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.obj" \
 "CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj" \
@@ -527,6 +541,7 @@ f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/dma.c.obj
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/gpio.c.obj
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/i2c.c.obj
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/main.c.obj
+f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/oled.c.obj
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.obj
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.obj
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj
@@ -538,7 +553,7 @@ f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/Src/valuepack.c.obj
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/startup/startup_stm32f103xb.s.obj
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/build.make
 f103c8t6.elf: CMakeFiles/f103c8t6.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking C executable f103c8t6.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=I:\STM32H7\clion\stm32\f103c8t6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking C executable f103c8t6.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\f103c8t6.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/f103c8t6.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building I:/STM32H7/clion/stm32/f103c8t6/cmake-build-debug/f103c8t6.bin"

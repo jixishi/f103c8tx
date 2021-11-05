@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/f103c8t6.elf.dir/Src/gpio.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/i2c.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/main.c.obj"
+  "CMakeFiles/f103c8t6.elf.dir/Src/oled.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/retarget.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_hal_msp.c.obj"
   "CMakeFiles/f103c8t6.elf.dir/Src/stm32f1xx_it.c.obj"

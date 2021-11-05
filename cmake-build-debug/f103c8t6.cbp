@@ -295,6 +295,9 @@
 		<Unit filename="I:/STM32H7/clion/stm32/f103c8t6/Src/main.c">
 			<Option target="f103c8t6.elf"/>
 		</Unit>
+		<Unit filename="I:/STM32H7/clion/stm32/f103c8t6/Src/oled.c">
+			<Option target="f103c8t6.elf"/>
+		</Unit>
 		<Unit filename="I:/STM32H7/clion/stm32/f103c8t6/Src/retarget.c">
 			<Option target="f103c8t6.elf"/>
 		</Unit>

@@ -656,6 +656,30 @@ Src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\f103c8t6.elf.dir\build.make CMakeFiles/f103c8t6.elf.dir/Src/main.c.s
 .PHONY : Src/main.c.s
 
+Src/oled.obj: Src/oled.c.obj
+.PHONY : Src/oled.obj
+
+# target to build an object file
+Src/oled.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\f103c8t6.elf.dir\build.make CMakeFiles/f103c8t6.elf.dir/Src/oled.c.obj
+.PHONY : Src/oled.c.obj
+
+Src/oled.i: Src/oled.c.i
+.PHONY : Src/oled.i
+
+# target to preprocess a source file
+Src/oled.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\f103c8t6.elf.dir\build.make CMakeFiles/f103c8t6.elf.dir/Src/oled.c.i
+.PHONY : Src/oled.c.i
+
+Src/oled.s: Src/oled.c.s
+.PHONY : Src/oled.s
+
+# target to generate assembly for a file
+Src/oled.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\f103c8t6.elf.dir\build.make CMakeFiles/f103c8t6.elf.dir/Src/oled.c.s
+.PHONY : Src/oled.c.s
+
 Src/retarget.obj: Src/retarget.c.obj
 .PHONY : Src/retarget.obj
 
@@ -931,6 +955,9 @@ help:
 	@echo ... Src/main.obj
 	@echo ... Src/main.i
 	@echo ... Src/main.s
+	@echo ... Src/oled.obj
+	@echo ... Src/oled.i
+	@echo ... Src/oled.s
 	@echo ... Src/retarget.obj
 	@echo ... Src/retarget.i
 	@echo ... Src/retarget.s
