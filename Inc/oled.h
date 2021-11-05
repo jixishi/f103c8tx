@@ -36,8 +36,9 @@ void OLED_ShowChar(uint8_t x,uint8_t y,uint8_t chr,uint8_t size1);
 //显示浮点数
 //x,y:起点坐标
 //size1:字体大小
-//*chr:字符串起始地址
-void OLED_ShowFloat(uint8_t x,uint8_t y,float num,uint8_t size1);
+//*chr:字符串格式化形式
+
+void OLED_ShowFloat(uint8_t x,uint8_t y,float num,uint8_t size1,uint8_t * chr);
 //显示字符串
 //x,y:起点坐标
 //size1:字体大小

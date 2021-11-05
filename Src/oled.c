@@ -271,10 +271,10 @@ void OLED_ShowChar(uint8_t x,uint8_t y,uint8_t chr,uint8_t size1)
 //x,y:起点坐标
 //size1:字体大小
 //*chr:字符串起始地址
-void OLED_ShowFloat(uint8_t x,uint8_t y,float num,uint8_t size1)
+void OLED_ShowFloat(uint8_t x,uint8_t y,float num,uint8_t size1,uint8_t * chr)
 {
     char temp[10];
-    sprintf((char *)temp,"%0.2f",num);
+    sprintf((char *)temp,chr,num);
     OLED_ShowString(x,y,temp,size1);
 }
 //显示字符串

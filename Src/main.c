@@ -42,7 +42,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_MAX_NUM 3*1
+#define ADC_MAX_NUM 3*256
 #define ADC_CHANNEL_CNT 3
 /* USER CODE END PD */
 
@@ -59,7 +59,9 @@ uint16_t adc_value_flg=0;
 uint16_t ADC_eva[ADC_CHANNEL_CNT] = {0};
 double vpp=0,v_max=0,v_min=5,ff=0;
 double ft=0.0,v_temp1=0.0,v_temp2=0.0,v_temp3=0.0;
-bool fb=0,zb=0,sb=0;
+bool fb=0,zb=0,sb=0,mv=0;
+uint8_t *s_vpp="Vpp:       v",*s_max="Vmax:      mv",*s_min="Vmin:       mv",*ad="ADC:       v",*ch_mv="%.1f",*ch_v="%.3f";
+uint8_t *ch="";
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -68,6 +70,7 @@ void SystemClock_Config(void);
 
 void start_adc(){
     HAL_TIM_Base_Start_IT(&htim2);
+    HAL_TIM_Base_Start_IT(&htim3);
     HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
     HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
 }
@@ -133,7 +136,33 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
         HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
         ft=((float )ADC_Values[0]/4096*3.3);
-        if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
+
+    }
+    if(htim==(&htim3))
+    {
+        HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+        float max=0,min=0,n;
+        for(int i=0;i<100;i++)
+        {
+            n=((float )ADC_Values[i*3]/4096*3.3);
+            if(n>max){max=n;min=-max;}else{vpp=max-min;}
+        }
+        if(vpp<=1.0){
+            vpp=1000*vpp;
+            s_vpp="Vpp:       mv";
+            v_max=1000*max;
+            s_max="Vmax:       mv";
+            v_min=1000*min;
+            s_min="Vmin:       mv";
+            mv=1;
+        } else if(vpp>1.0)
+        {
+            v_max=max;v_min=min;
+            s_vpp="Vpp:       v  ";
+            s_max="Vmax:      v  ";
+            s_min="Vmin:       v  ";
+            mv=0;
+        }
 
     }
 
@@ -182,6 +211,7 @@ int main(void)
   MX_DMA_Init();
   MX_ADC1_Init();
   MX_TIM2_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
   OLED_ON();
@@ -200,18 +230,20 @@ int main(void)
   start_adc();
     while (1)
     {
-        //ft=((float )ADC_Values[0]/4096*3.3)-1.5;
-        //if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
+        if (mv){
+            ch=ch_mv;
+        } else{ch=ch_v;}
+
         //vpp= get_vpp(ADC_Values);
         printf("采样值：%.4f\t峰峰值：%.3f\n",ft,vpp);
-        OLED_ShowString(0,16,"ADC:      v",12);
-        OLED_ShowFloat(32,16,ft,12);
-        OLED_ShowString(0,28,"Vpp:      v",12);
-        OLED_ShowFloat(32,28,vpp,12);
-        OLED_ShowString(0,40,"Vmax:     v",12);
-        OLED_ShowFloat(32,40,v_max,12);
-        OLED_ShowString(0,52,"Vmin:     v",12);
-        OLED_ShowFloat(32,52,v_min,12);
+        OLED_ShowString(0,16,ad,12);
+        OLED_ShowFloat(32,16,ft,12,ch);
+        OLED_ShowString(0,28,s_vpp,12);
+        OLED_ShowFloat(32,28,vpp,12,ch);
+        OLED_ShowString(0,40,s_max,12);
+        OLED_ShowFloat(32,40,v_max,12,ch);
+        OLED_ShowString(0,52,s_min,12);
+        OLED_ShowFloat(32,52,v_min,12,ch);
         OLED_Refresh();
     /* USER CODE END WHILE */
 
@@ -227,7 +259,8 @@ int main(void)
         putFloat(v_min);
         putFloat(ff);
         sendBuffer(Tx_pack,(endValuePack()));
-        HAL_Delay(20);
+        HAL_Delay(5);
+        //v_min=v_max=vpp=0;
     }
   /* USER CODE END 3 */
 }
