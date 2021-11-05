@@ -17,16 +17,10 @@
     <list default="true" id="2a690bb0-74ce-4f3b-8de1-ca18b26a453f" name="变更" comment="test_init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/f103c8t6.elf.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.hex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/f103c8t6.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f103c8t6.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/f103c8t6.ioc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +117,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="tim_it_test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -184,6 +178,7 @@
       <item itemvalue="OpenOCD 下载并运行.OCD f103c8t6" />
     </list>
   </component>
+  <component name="ShelveChangesManager" show_recycled="true" />
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">

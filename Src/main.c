@@ -41,7 +41,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_MAX_NUM 3*3 //3组ADC,每组�?????多存�?????5个�??
+#define ADC_MAX_NUM 3*50 //3组ADC,每组�?????多存�?????5个�??
 #define ADC_CHANNEL_CNT 3
 /* USER CODE END PD */
 
@@ -56,8 +56,8 @@
 uint16_t ADC_Values[ADC_MAX_NUM]={0};
 uint16_t adc_value_flg=0;
 uint16_t ADC_eva[ADC_CHANNEL_CNT] = {0};
-float vpp=0,v_max=0,v_min=0;
-float ft=0.0,v_temp1=0.0,v_temp2=0.0,v_temp3=0.0;
+double vpp=0,v_max=0,v_min=5,ff=0;
+double ft=0.0,v_temp1=0.0,v_temp2=0.0,v_temp3=0.0;
 bool fb=0,zb=0,sb=0;
 /* USER CODE END PV */
 
@@ -118,11 +118,9 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
-    v_temp1=((float )ADC_Values[0]/4096*3.3);
-    v_temp2=((float )ADC_Values[1]/4096*3.3);
-    v_temp3=((float )ADC_Values[2]/4096*3.3);
-    ft=v_temp1;
-    if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
+    //v_temp1=((float )ADC_Values[0]/4096*3.3);
+    //v_temp2=((float )ADC_Values[1]/4096*3.3);
+    //v_temp3=((float )ADC_Values[2]/4096*3.3);
     //get_ADC_Channel_Val();
 }
 
@@ -177,6 +175,8 @@ int main(void)
   start_adc();
     while (1)
     {
+        ft=((float )ADC_Values[0]/4096*3.3);
+        if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
         printf("采样值：%.4f\t峰峰值：%.3f\n",ft,vpp);
     /* USER CODE END WHILE */
 
@@ -186,11 +186,11 @@ int main(void)
         putBool(fb);
         putBool(zb);
         putBool(sb);
-        putInt(vpp);
-        //putFloat(ft);
-        putFloat(v_temp1);
-        putFloat(v_temp2);
-        putFloat(v_temp3);
+        putFloat(vpp);
+        putFloat(ft);
+        putFloat(v_max);
+        putFloat(v_min);
+        putFloat(ff);
         sendBuffer(Tx_pack,(endValuePack()));
         HAL_Delay(20);
     }
