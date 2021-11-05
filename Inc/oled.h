@@ -1,4 +1,5 @@
 #define OLED_ADDRESS 0x78
+#define OLED_MODE 1
 #include "stm32f1xx_hal.h"
 #include "stdlib.h"
 #include <stdio.h>

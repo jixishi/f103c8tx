@@ -42,7 +42,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_MAX_NUM 3*50 //3组ADC,每组�?????多存�?????5个�??
+#define ADC_MAX_NUM 3*1
 #define ADC_CHANNEL_CNT 3
 /* USER CODE END PD */
 
@@ -108,7 +108,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 
     //获取值并存储
     ADC_Values[adc_value_flg++]=HAL_ADC_GetValue(hadc);
-    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    //HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
     if(adc_value_flg==ADC_MAX_NUM)
     {
         adc_value_flg=0;//清零下标
@@ -116,9 +116,26 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 
 
 }
+float vp=0;
+float get_vpp(uint16_t ADC[]){
+    float max=0,min=0;
+    for(int i=0;i<100;i++)
+    {
+        ft=((float )ADC[i*3]/4096*3.3)-1.5;
+        if(ft>max){max=ft;}else if(ft<min){min=ft;}else{vp=max-min;}
+    }
+    v_max=max;v_min=min;
+    return vp;
+}
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
+    if(htim==(&htim2))
+    {
+        HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
+        ft=((float )ADC_Values[0]/4096*3.3);
+        if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
+
+    }
 
     //v_temp1=((float )ADC_Values[0]/4096*3.3);
     //v_temp2=((float )ADC_Values[1]/4096*3.3);
@@ -171,9 +188,10 @@ int main(void)
   OLED_CLS();
   HAL_ADCEx_Calibration_Start(&hadc1);
   RetargetInit(&huart1);
-  OLED_ShowChinese(0+16,0,0,16);
-  OLED_ShowChinese(16+16,0,1,16);
-  OLED_ShowChinese(32+16,0,2,16);
+  OLED_ShowChinese(0+20,0,0,16);
+  OLED_ShowChinese(16+20,0,1,16);
+  OLED_ShowChinese(32+20,0,2,16);
+    OLED_ShowChinese(48+20,0,3,16);
   OLED_Refresh();
   /* USER CODE END 2 */
 
@@ -182,8 +200,9 @@ int main(void)
   start_adc();
     while (1)
     {
-        ft=((float )ADC_Values[0]/4096*3.3);
-        if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
+        //ft=((float )ADC_Values[0]/4096*3.3)-1.5;
+        //if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
+        //vpp= get_vpp(ADC_Values);
         printf("采样值：%.4f\t峰峰值：%.3f\n",ft,vpp);
         OLED_ShowString(0,16,"ADC:      v",12);
         OLED_ShowFloat(32,16,ft,12);

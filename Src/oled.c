@@ -2,28 +2,47 @@
 #include "oled.h"
 #include "oledfont.h"
 extern I2C_HandleTypeDef hi2c1;
+extern SPI_TypeDef  hspi1;
 uint8_t OLED_GRAM[144][8];
-void WriteCmd(unsigned char I2C_Command)//写命令
+#if OLED_MODE
+void WriteCmd(unsigned char Command)//写命令
 {
 //    uint8_t pData[1];
 //    pData[0] = I2C_Command;
     uint8_t *pData;
-    pData = &I2C_Command;
+    pData = &Command;
     HAL_I2C_Mem_Write(&hi2c1, OLED_ADDRESS, 0x00, I2C_MEMADD_SIZE_8BIT, pData, 1, 100);
 }
 
-void WriteDat(unsigned char I2C_Data)//写数据
+void WriteDat(unsigned char Data)//写数据
 {
 //    uint8_t pData[1];
 //    pData[0] = I2C_Data;
     uint8_t *pData;
-    pData = &I2C_Data;
+    pData = &Data;
     HAL_I2C_Mem_Write(&hi2c1, OLED_ADDRESS, 0x40, I2C_MEMADD_SIZE_8BIT, pData, 1, 100);
 }
+#else
+void WriteCmd(unsigned char Command)//写命令
+{
+//    uint8_t pData[1];
+//    pData[0] = I2C_Command;
+    uint8_t *pData;
+    pData = &Command;
+    HAL_SPI_Transmit(&hspi1,pData,sizeof(pData),10);
+}
 
+void WriteDat(unsigned char Data)//写数据
+{
+//    uint8_t pData[1];
+//    pData[0] = I2C_Data;
+    uint8_t *pData;
+    pData = &Data;
+    HAL_SPI_Transmit(&hspi1,pData,sizeof(pData),10);
+}
+#endif
 void OLED_Init(void) {
     HAL_Delay(100); //这里的延时很重要
-
     WriteCmd(0xAE); //display off
     WriteCmd(0x20); //Set Memory Addressing Mode
     WriteCmd(0x10); //00,Horizontal Addressing Mode;01,Vertical Addressing Mode;10,Page Addressing Mode (RESET);11,Invalid
