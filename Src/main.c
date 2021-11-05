@@ -119,12 +119,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values,ADC_MAX_NUM);
-    OLED_CLS();
-    OLED_ShowString(0,16,"ADC:",16);
-    OLED_ShowFloat(64,16,ft,16);
-    OLED_ShowString(0,32,"Vpp:",16);
-    OLED_ShowFloat(64,32,vpp,16);
-    OLED_Refresh();
+
     //v_temp1=((float )ADC_Values[0]/4096*3.3);
     //v_temp2=((float )ADC_Values[1]/4096*3.3);
     //v_temp3=((float )ADC_Values[2]/4096*3.3);
@@ -190,6 +185,15 @@ int main(void)
         ft=((float )ADC_Values[0]/4096*3.3);
         if(ft>v_max){v_max=ft;}else if(ft<v_min){v_min=ft;}else{vpp=v_max-v_min;}
         printf("采样值：%.4f\t峰峰值：%.3f\n",ft,vpp);
+        OLED_ShowString(0,16,"ADC:      v",12);
+        OLED_ShowFloat(32,16,ft,12);
+        OLED_ShowString(0,28,"Vpp:      v",12);
+        OLED_ShowFloat(32,28,vpp,12);
+        OLED_ShowString(0,40,"Vmax:     v",12);
+        OLED_ShowFloat(32,40,v_max,12);
+        OLED_ShowString(0,52,"Vmin:     v",12);
+        OLED_ShowFloat(32,52,v_min,12);
+        OLED_Refresh();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
