@@ -42,8 +42,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_MAX_NUM 3*256
+#define ADC_MAX_NUM 3*100
 #define ADC_CHANNEL_CNT 3
+#define FREQ_T 0.048
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -56,12 +57,12 @@
 /* USER CODE BEGIN PV */
 uint16_t ADC_Values[ADC_MAX_NUM]={0};
 uint16_t adc_value_flg=0;
-uint16_t ADC_eva[ADC_CHANNEL_CNT] = {0};
-double vpp=0,v_max=0,v_min=5,ff=0;
-double ft=0.0,v_temp1=0.0,v_temp2=0.0,v_temp3=0.0;
+double vpp=0,v_max=0,v_min=5,ff=0,tim=0;
+double ft=0.0,f_tp[5]={0};
 bool fb=0,zb=0,sb=0,mv=0;
-uint8_t *s_vpp="Vpp:       v",*s_max="Vmax:      mv",*s_min="Vmin:       mv",*ad="ADC:       v",*ch_mv="%.1f",*ch_v="%.3f";
+uint8_t *s_vpp="",*s_max="",*s_min="",*ad="ADC:    v",*ch_mv="%.1f",*ch_v="%.3f";
 uint8_t *ch="";
+int f=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -119,16 +120,13 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 
 
 }
-float vp=0;
-float get_vpp(uint16_t ADC[]){
-    float max=0,min=0;
-    for(int i=0;i<100;i++)
-    {
-        ft=((float )ADC[i*3]/4096*3.3)-1.5;
-        if(ft>max){max=ft;}else if(ft<min){min=ft;}else{vp=max-min;}
+void get_ff(void)
+{
+    double num=0;
+    for(int i=0;i<5;i++){
+        num+=f_tp[i];
     }
-    v_max=max;v_min=min;
-    return vp;
+    ff=num/5;
 }
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -140,30 +138,60 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     if(htim==(&htim3))
     {
+        int tim1=0,tim2=0;
         HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
         float max=0,min=0,n;
         for(int i=0;i<100;i++)
         {
             n=((float )ADC_Values[i*3]/4096*3.3);
+            if(ADC_Values[i*3-3]<ADC_Values[i*3]&&ADC_Values[i*3]>ADC_Values[i*3+3]&&tim1==0){tim1=i;}
+            else if(ADC_Values[i*3-3]<ADC_Values[i*3]&&ADC_Values[i*3]>ADC_Values[i*3+3]&&tim2==0){tim2=i;}
+            else if(tim2>tim1){
+                tim=tim2-tim1;
+                switch (f) {
+                    case 0:
+                        f_tp[f]=1/(0.000001*tim)*FREQ_T;
+                        f++;
+                        break;
+                    case 1:
+                        f_tp[f]=1/(0.000001*tim)*FREQ_T;
+                        f++;
+                        break;
+                    case 2:
+                        f_tp[f]=1/(0.000001*tim)*FREQ_T;
+                        f++;
+                        break;
+                    case 3:
+                        f_tp[f]=1/(0.000001*tim)*FREQ_T;
+                        f++;
+                        break;
+                    case 4:
+                        f_tp[f]=1/(0.000001*tim)*FREQ_T;
+                        f=0;
+                        break;
+                }
+
+            }
             if(n>max){max=n;min=-max;}else{vpp=max-min;}
+
         }
         if(vpp<=1.0){
             vpp=1000*vpp;
-            s_vpp="Vpp:       mv";
+            s_vpp="Vpp:     mv";
             v_max=1000*max;
-            s_max="Vmax:       mv";
+            s_max="Vmax:     mv";
             v_min=1000*min;
-            s_min="Vmin:       mv";
+            s_min="Vmin:      mv";
             mv=1;
         } else if(vpp>1.0)
         {
             v_max=max;v_min=min;
-            s_vpp="Vpp:       v  ";
-            s_max="Vmax:      v  ";
+            s_vpp="Vpp:     v ";
+            s_max="Vmax:      v ";
             s_min="Vmin:       v  ";
             mv=0;
         }
-
+        if(f==0){get_ff();}
     }
 
     //v_temp1=((float )ADC_Values[0]/4096*3.3);
@@ -218,10 +246,10 @@ int main(void)
   OLED_CLS();
   HAL_ADCEx_Calibration_Start(&hadc1);
   RetargetInit(&huart1);
-  OLED_ShowChinese(0+20,0,0,16);
-  OLED_ShowChinese(16+20,0,1,16);
-  OLED_ShowChinese(32+20,0,2,16);
-    OLED_ShowChinese(48+20,0,3,16);
+  OLED_ShowChinese(0,0,0,16);
+  OLED_ShowChinese(16,0,1,16);
+  OLED_ShowChinese(32,0,2,16);
+  OLED_ShowChinese(48,0,3,16);
   OLED_Refresh();
   /* USER CODE END 2 */
 
@@ -233,17 +261,17 @@ int main(void)
         if (mv){
             ch=ch_mv;
         } else{ch=ch_v;}
-
-        //vpp= get_vpp(ADC_Values);
         printf("采样值：%.4f\t峰峰值：%.3f\n",ft,vpp);
         OLED_ShowString(0,16,ad,12);
-        OLED_ShowFloat(32,16,ft,12,ch);
+        OLED_ShowFloat(24,16,ft,12,"%.2f");
         OLED_ShowString(0,28,s_vpp,12);
-        OLED_ShowFloat(32,28,vpp,12,ch);
+        OLED_ShowFloat(24,28,vpp,12,ch);
         OLED_ShowString(0,40,s_max,12);
         OLED_ShowFloat(32,40,v_max,12,ch);
         OLED_ShowString(0,52,s_min,12);
         OLED_ShowFloat(32,52,v_min,12,ch);
+        OLED_ShowString(72,16,"Freq:",12);
+        OLED_ShowFloat(72,32,ff,12,"%.2f");
         OLED_Refresh();
     /* USER CODE END WHILE */
 
